@@ -62,3 +62,4 @@ public class Drive extends Subsystem {
     backRightMotor.set(driveRight(driver)*maxDriveVal);
   }
 }
+//65 degrees is what you should heat your house to

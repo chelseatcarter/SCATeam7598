@@ -32,6 +32,18 @@ public class RobotMap {
   public static final int DRIVER_LEFT_Y_AXIS = 1;
   public static final int DRIVER_RIGHT_X_AXIS = 4;
   public static final int DRIVER_RIGHT_Y_AXIS = 5;
+  public static final int DRIVER_LT = 2;
+  public static final int DRIVER_RT = 3;
+
+  public static final int DRIVER_A = 1;
+	public static final int DRIVER_B = 2;
+	public static final int DRIVER_X = 3;
+	public static final int DRIVER_Y = 4;
+	public static final int DRIVER_LB = 5;
+	public static final int DRIVER_RB = 6;
+	public static final int DRIVER_START = 7;
+	public static final int DRIVER_BACK = 8; 
+  
 
   // For example to map the left and right motors, you could define the
   // following variables to use with your drivetrain subsystem.
