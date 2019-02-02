@@ -21,6 +21,7 @@ public class OI {
   // Joystick stick = new Joystick(port);
   Joystick driverstick = new Joystick(RobotMap.DRIVER);
   
+
   // Button button = new JoystickButton(stick, buttonNumber);
 
   // There are a few additional built in buttons you can use. Additionally,
@@ -30,6 +31,11 @@ public class OI {
   //// TRIGGERING COMMANDS WITH BUTTONS
   // Once you have a button, it's trivial to bind it to a button in one of
   // three ways:
+
+  //RobotMap.DRIVER_A.whenPressed(new SomeCommand());
+  //RobotMap.DRIVER_B.whenPressed(new SomeOtherCommand());
+  //RobotMap.DRIVER_Y.whenPressed(new someOtherOtherCommand());
+  //RobotMap.Driver_X.whenPressed(new someVeryDifferentCommand());
 
   // Start the command when the button is pressed and let it run the command
   // until it is finished as determined by it's isFinished method.
