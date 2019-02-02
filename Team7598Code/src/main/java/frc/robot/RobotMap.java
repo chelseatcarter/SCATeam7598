@@ -5,7 +5,10 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
+//Oh my there is absolutely nothing here
+
 package frc.robot;
+
 
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
@@ -14,39 +17,55 @@ package frc.robot;
  * floating around.
  */
 public class RobotMap {
+
+  //motors
+  public static final int FRONT_LEFT_MOTOR = 2;
+  public static final int FRONT_RIGHT_MOTOR = 4;
+  public static final int BACK_LEFT_MOTOR = 0;
+  public static final int BACK_RIGHT_MOTOR =3;
+
+  //controllers
+  public static final int DRIVER = 0;
+
+  //buttons
+  public static final int DRIVER_LEFT_X_AXIS = 0;
+  public static final int DRIVER_LEFT_Y_AXIS = 1;
+  public static final int DRIVER_RIGHT_X_AXIS = 4;
+  public static final int DRIVER_RIGHT_Y_AXIS = 5;
+
   // For example to map the left and right motors, you could define the
   // following variables to use with your drivetrain subsystem.
   // public static int leftMotor = 1;
   // public static int rightMotor = 2;
-public static int fowardDoubleSolenoid =  0;
-public static int reverseDoubleSolenoid = 1;
+  public static int fowardDoubleSolenoid =  0;
+  public static int reverseDoubleSolenoid = 1;
 
-//ultrasonic sensor port
-public static int ultrasonicSensorPort = 0;
+  //ultrasonic sensor port
+  public static int ultrasonicSensorPort = 0;
 
-//gamepad axis ports
-public static int AXISLEFTX = 1;
-public static int AXISLEFTY = 2;
-public static int AXISSHOULDER = 3;
-public static int AXISRIGHTX = 4;
-public static int axisRightY = 5;
-public static int axisDPad = 6;
+  //gamepad axis ports
+  public static int AXISLEFTX = 1;
+  public static int AXISLEFTY = 2;
+  public static int AXISSHOULDER = 3;
+  public static int AXISRIGHTX = 4;
+  public static int axisRightY = 5;
+  public static int axisDPad = 6;
 
-//gamepad buttons
-public static int buttonA = 2;
-public static int buttonB = 3;
-public static int buttonX = 1;
-public static int buttonY = 4;
-public static int buttonShoulderL = 5;
-public static int buttonShoulderR = 6;
-public static int buttonTriggerL = 7;
-public static int buttonTriggerR = 8;
-public static int buttonBack = 9;
-public static int buttonStart = 10;
-public static int buttonStickL = 11;
-public static int buttonStickR = 12;
-public static int buttonMode = -1;
-public static int buttonLogitech  = -1;
+  //gamepad buttons
+  public static int buttonA = 2;
+  public static int buttonB = 3;
+  public static int buttonX = 1;
+  public static int buttonY = 4;
+  public static int buttonShoulderL = 5;
+  public static int buttonShoulderR = 6;
+  public static int buttonTriggerL = 7;
+  public static int buttonTriggerR = 8;
+  public static int buttonBack = 9;
+  public static int buttonStart = 10;
+  public static int buttonStickL = 11;
+  public static int buttonStickR = 12;
+  public static int buttonMode = -1;
+  public static int buttonLogitech  = -1;
 
   // If you are using multiple modules, make sure to define both the port
   // number and the module. For example you with a rangefinder:
