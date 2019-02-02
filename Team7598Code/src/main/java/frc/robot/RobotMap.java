@@ -5,7 +5,10 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
+//Oh my there is absolutely nothing here
+
 package frc.robot;
+
 
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
@@ -14,6 +17,22 @@ package frc.robot;
  * floating around.
  */
 public class RobotMap {
+
+  //motors
+  public static final int FRONT_LEFT_MOTOR = 2;
+  public static final int FRONT_RIGHT_MOTOR = 4;
+  public static final int BACK_LEFT_MOTOR = 0;
+  public static final int BACK_RIGHT_MOTOR =3;
+
+  //controllers
+  public static final int DRIVER = 0;
+
+  //buttons
+  public static final int DRIVER_LEFT_X_AXIS = 0;
+  public static final int DRIVER_LEFT_Y_AXIS = 1;
+  public static final int DRIVER_RIGHT_X_AXIS = 4;
+  public static final int DRIVER_RIGHT_Y_AXIS = 5;
+
   // For example to map the left and right motors, you could define the
   // following variables to use with your drivetrain subsystem.
   // public static int leftMotor = 1;
