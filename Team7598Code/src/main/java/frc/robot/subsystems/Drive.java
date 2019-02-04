@@ -23,7 +23,7 @@ public class Drive extends Subsystem {
   public static Talon frontRightMotor;
   public static Talon backLeftMotor;
   public static Talon backRightMotor;
-  public double maxDriveVal = 0.7;
+  public double maxDriveVal = 0.45;
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
   public Drive()
