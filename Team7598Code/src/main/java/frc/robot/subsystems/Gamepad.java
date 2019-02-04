@@ -21,25 +21,25 @@ public class Gamepad extends Joystick {
     //returns X position of Left Joystick
     public double getLeftX() 
     {
-        return getRawAxis(RobotMap.AXIS_LEFT_X);
+        return getRawAxis(RobotMap.DRIVER_LEFT_X_AXIS);
     }
 
     //returns X position of Right Joystick
     public double getRightX()
     {
-        return getRawAxis(RobotMap.AXIS_LEFT_X);
+        return getRawAxis(RobotMap.DRIVER_RIGHT_X_AXIS);
     }
 
     //returns Y position of Left Joystick
     public double getLeftY()
     {
-        return getRawAxis(RobotMap.AXIS_LEFT_Y);
+        return getRawAxis(RobotMap.DRIVER_LEFT_Y_AXIS);
     }
 
     //returns Y position of Right Joystick
     public double getRightY()
     {
-        return getRawAxis(RobotMap.AXIS_RIGHT_Y);
+        return getRawAxis(RobotMap.DRIVER_RIGHT_Y_AXIS);
     }
 
     //return state of Button A
@@ -93,7 +93,7 @@ public class Gamepad extends Joystick {
     //return axis value of DPad
     public double getDPadX()
     {
-        return getRawAxis(RobotMap.AXIS_DPAD);
+        return getRawAxis(RobotMap.AXIS_D_PAD);
     }
 
     //return true if DPad Left (if less that -0.5)
@@ -135,7 +135,7 @@ public class Gamepad extends Joystick {
     }
 
     //return object Left Stick Click Button
-    public JoystickButton getLeftStickClick()//what button is this??
+    /*public JoystickButton getLeftStickClick()//what button is this??
     {
         return new  JoystickButton(this, RobotMap.BUTTON_STICK_L);
     }
@@ -144,7 +144,7 @@ public class Gamepad extends Joystick {
     public JoystickButton getRightStickClick()
     {
         return new JoystickButton(this, RobotMap.BUTTON_STICK_R);
-    }
+    }*/
 
     //return object Left Trigger Button
     public JoystickButton getLeftTriggerClick()
