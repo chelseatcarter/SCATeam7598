@@ -13,7 +13,6 @@ import frc.robot.commands.TankDrive;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.Joystick;
 
-
 /**
  * Add your docs here.
  */
@@ -24,6 +23,7 @@ public class Drive extends Subsystem {
   public static Talon backLeftMotor;
   public static Talon backRightMotor;
   public double maxDriveVal = 0.7;
+  public double minDriveVal = maxDriveVal/2;
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
   public Drive()
@@ -52,7 +52,13 @@ public class Drive extends Subsystem {
      return leftDriverVal;
   }
 
-
+  public void driveSlow(Joystick driver)
+  {
+    frontLeftMotor.set(driveLeft(driver)*minDriveVal);
+    frontRightMotor.set(driveRight(driver)*minDriveVal);
+    backLeftMotor.set(driveLeft(driver)*minDriveVal);
+    backRightMotor.set(driveRight(driver)*minDriveVal);
+  }
 
   public void throttledTankDrive(Joystick driver)
   {

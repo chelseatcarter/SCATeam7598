@@ -69,7 +69,7 @@ public class Gamepad extends Joystick {
     //return object ButtonA
     public JoystickButton getButtonA()
     {
-        return new JoystickButton(this, RobotMap.BUTTON_A); //ask about the this
+        return new JoystickButton(this, RobotMap.BUTTON_A);
     }
 
     //return object ButtonB
@@ -100,20 +100,14 @@ public class Gamepad extends Joystick {
     public boolean getDPadLeft()
     {
         double x = getDPadX();
-        return (x < -0.5); //why -0.5?
+        return (x < -0.5);
     }
 
     //return true if DPad Right (if more than 0.5)
     public boolean getDPadRight()
     {
         double x = getDPadX();
-        return (x > 0.5); //why 0.5?
-    }
-
-    //return object Start Button
-    public JoystickButton getStartButton() //also do get button state of start button
-    {
-        return new JoystickButton(this, RobotMap.BUTTON_START);
+        return (x > 0.5);
     }
 
     //return object Back Button

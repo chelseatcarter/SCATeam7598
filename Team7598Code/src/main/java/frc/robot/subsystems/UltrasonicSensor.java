@@ -7,11 +7,9 @@
 
 package frc.robot.subsystems;
 
-import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
 import edu.wpi.first.wpilibj.AnalogInput;
-import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
 /**
  * Add your docs here.
@@ -31,7 +29,6 @@ public class UltrasonicSensor extends Subsystem {
  // returns distance from object in mm 
   public double getValue()
   {
-    //int raw = mb1013.getValue();
     double voltage = mb1013.getVoltage();
     double V5mm = (5 / 4096) * 1000;
     double distance = (voltage/V5mm) * 5;

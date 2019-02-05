@@ -11,15 +11,11 @@ import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 import frc.robot.subsystems.Gamepad;
 
-public class TankDrive extends Command {
-
-  //private Joystick driver;
-  private Gamepad driver;
-
-  public TankDrive() {
-    // Use requires() here to declare subsystem dependencies
+public class DriveSlow extends Command {
+  private Gamepad gamePad;
+  public DriveSlow() {
     requires(Robot.m_drive);
-    driver = Robot.m_oi.getDriverJoystick();
+    gamePad = Robot.m_oi.getDriverJoystick();
   }
 
   // Called just before this Command runs the first time
@@ -30,8 +26,10 @@ public class TankDrive extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-   
-    Robot.m_drive.throttledTankDrive(driver);
+    if (gamePad.getButtonStateB() && Robot.m_ultraSens.getValue() <= 400)
+    {
+      Robot.m_drive.driveSlow(gamePad);
+    }
   }
 
   // Make this return true when this Command no longer needs to run execute()
@@ -49,6 +47,5 @@ public class TankDrive extends Command {
   // subsystems is scheduled to run
   @Override
   protected void interrupted() {
-  
   }
 }
