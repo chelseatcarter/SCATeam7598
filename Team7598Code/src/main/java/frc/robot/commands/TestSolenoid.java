@@ -15,6 +15,7 @@ public class TestSolenoid extends Command {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
     requires(Robot.m_claw);
+    //setTimeout(.9);
   }
 
   // Called just before this Command runs the first time
@@ -31,6 +32,7 @@ public class TestSolenoid extends Command {
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
+    //return isTimedOut();
     return false;
   }
 

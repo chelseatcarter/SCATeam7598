@@ -11,6 +11,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import frc.robot.RobotMap;
 import frc.robot.commands.TestSolenoid;
+import frc.robot.subsystems.Gamepad;
 
 /**
  * Add your docs here.
@@ -21,12 +22,14 @@ public class Claw extends Subsystem {
   private DoubleSolenoid clawGrabSolenoid;
   private static final DoubleSolenoid.Value CLOSED = DoubleSolenoid.Value.kReverse;
   private static final DoubleSolenoid.Value OPEN = DoubleSolenoid.Value.kForward;
-
+  private Gamepad gamepad;
 
   public Claw()
   {
-     clawGrabSolenoid = new DoubleSolenoid(RobotMap.fowardDoubleSolenoid, RobotMap.reverseDoubleSolenoid);
+     clawGrabSolenoid = new DoubleSolenoid(RobotMap.FOWARD_CHANNEL
+     , RobotMap.REVERSE_CHANNEL);
      clawGrabSolenoid.set(CLOSED);
+     
   }
 
   public void openClaw()
@@ -51,10 +54,19 @@ public class Claw extends Subsystem {
  
   public void TestSolenoid()
   {
-    if (isClawOpen())
-      closeClaw();
-    else
-      openClaw();
+    //if (isClawOpen())
+      //closeClaw();
+    //else
+     // openClaw();
+
+     if (gamepad.getButtonStateX())
+     {
+        closeClaw();
+     }
+     else if (gamepad.getButtonStateY())
+     {
+        openClaw();
+     }
   }
   @Override
   public void initDefaultCommand() {
