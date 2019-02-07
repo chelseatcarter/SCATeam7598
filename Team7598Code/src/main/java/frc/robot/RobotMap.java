@@ -35,8 +35,8 @@ public class RobotMap {
 
   // For example to map the left and right motors, you could define the
   // following variables to use with your drivetrain subsystem.
-  public static int fowardDoubleSolenoid =  0;
-  public static int reverseDoubleSolenoid = 1;
+  public static final int FOWARD_CHANNEL =  0;
+  public static final int REVERSE_CHANNEL = 4;
 
   //ultrasonic sensor port
   public static int ultrasonicSensorPort = 0;
