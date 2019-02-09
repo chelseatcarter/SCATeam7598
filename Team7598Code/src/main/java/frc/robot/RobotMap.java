@@ -48,6 +48,7 @@ public class RobotMap {
 	public static final int DRIVER_START = 7;
 	public static final int DRIVER_BACK = 8; 
   
+  public static final int ENCODER_CHANNEL= 1;
 
   // For example to map the left and right motors, you could define the
   // following variables to use with your drivetrain subsystem.
