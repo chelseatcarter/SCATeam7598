@@ -33,14 +33,11 @@ public class UltrasonicSensor extends Subsystem {
  // returns distance from object in mm 
   public double getValue()
   {
-    SmartDashboard.putNumber("Average Anaaaaalong Value", mb1013.getAverageValue());
-    SmartDashboard.putNumber("Analog Value (0-4096):",mb1013.getValue());
-    double voltage = mb1013.getVoltage();
-    SmartDashboard.putNumber("Voltage: " , voltage);
-    SmartDashboard.putNumber("Average Voltage", mb1013.getAverageVoltage());
-    SmartDashboard.putNumber("V5mm: ", V5mm);
-    double distance = (voltage/V5mm) * 5;
-    SmartDashboard.putNumber("Distance (mm): ",distance);
+    // SmartDashboard.putNumber("Analog Value (0-4096):",mb1013.getValue());
+    // double voltage = mb1013.getVoltage();
+    // SmartDashboard.putNumber("Voltage: " , voltage);
+    // double distance = (voltage/V5mm) * 5;
+    SmartDashboard.putNumber("Distance (mm): ",mb1013.getValue() * 1.25);
     return distance;
 
   }
