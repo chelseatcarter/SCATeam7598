@@ -8,7 +8,9 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.RobotMap;
+import frc.robot.commands.getSensorVals;
 import edu.wpi.first.wpilibj.AnalogInput;
 
 /**
@@ -20,20 +22,27 @@ public class UltrasonicSensor extends Subsystem {
 
   AnalogInput mb1013;
   double distance;
-  
+  public final double V5mm;
   public UltrasonicSensor()
   {
     mb1013 = new AnalogInput(RobotMap.ultrasonicSensorPort);
+    V5mm =((double)5.0/4096.0);
+    System.out.println(V5mm);
   }
 
  // returns distance from object in mm 
   public double getValue()
   {
+    SmartDashboard.putNumber("Average Anaaaaalong Value", mb1013.getAverageValue());
+    SmartDashboard.putNumber("Analog Value (0-4096):",mb1013.getValue());
     double voltage = mb1013.getVoltage();
-    double V5mm = (5 / 4096) * 1000;
+    SmartDashboard.putNumber("Voltage: " , voltage);
+    SmartDashboard.putNumber("Average Voltage", mb1013.getAverageVoltage());
+    SmartDashboard.putNumber("V5mm: ", V5mm);
     double distance = (voltage/V5mm) * 5;
-    System.out.println("Distance (mm): " + distance);
+    SmartDashboard.putNumber("Distance (mm): ",distance);
     return distance;
+
   }
 
 
@@ -41,5 +50,6 @@ public class UltrasonicSensor extends Subsystem {
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
     // setDefaultCommand(new MySpecialCommand());
+    setDefaultCommand(new getSensorVals());
   }
 }
