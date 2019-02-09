@@ -45,7 +45,7 @@ public class Gamepad extends Joystick {
     //return state of Button A
     public boolean getButtonStateA()
     {
-        return getButton(RobotMap.DRIVER_A);
+        return getRawButton(RobotMap.DRIVER_A);
     }
 
     //return state of Button B
