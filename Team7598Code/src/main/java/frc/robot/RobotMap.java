@@ -38,6 +38,8 @@ public class RobotMap {
   public static int fowardDoubleSolenoid =  0;
   public static int reverseDoubleSolenoid = 1;
 
+  public static int ENCODER_CHANNEL = 1;
+
   //ultrasonic sensor port
   public static int ultrasonicSensorPort = 0;
 
