@@ -8,22 +8,13 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
-import edu.wpi.first.cameraserver.CameraServer;
-import edu.wpi.cscore.UsbCamera;
 /**
  * Add your docs here.
  */
-public class Camera extends Subsystem {
+public class PixyCam extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
- UsbCamera camera = null;
-
- public Camera(){
-
-  camera = CameraServer.getInstance().startAutomaticCapture();
-  camera.setResolution(640, 480);
-
-
+ public PixyCam(){
  }
   @Override
   public void initDefaultCommand() {
