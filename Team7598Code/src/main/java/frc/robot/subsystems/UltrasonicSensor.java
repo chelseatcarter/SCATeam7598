@@ -21,6 +21,8 @@ public class UltrasonicSensor extends Subsystem {
   // here. Call these from Commands.
 
   AnalogInput mb1013;
+  int analogVal;
+  double analog2mm;
   double distance;
   private final double DISTANCE_OFFSET = 15.5;
 
@@ -32,7 +34,9 @@ public class UltrasonicSensor extends Subsystem {
  // returns distance from object in mm 
   public double getValue()
   {
-    distance = (mb1013.getValue() * 1.25) - DISTANCE_OFFSET;
+    analogVal = mb1013.getValue();
+    analog2mm = analogVal * 1.25;
+    distance = analog2mm - DISTANCE_OFFSET;
     SmartDashboard.putNumber("Distance (mm):", distance);
     return distance;
   }
