@@ -26,10 +26,8 @@ public class Claw extends Subsystem {
 
   public Claw()
   {
-     clawGrabSolenoid = new DoubleSolenoid(RobotMap.FOWARD_CHANNEL
-     , RobotMap.REVERSE_CHANNEL);
-     clawGrabSolenoid.set(CLOSED);
-     
+    clawGrabSolenoid = new DoubleSolenoid(RobotMap.FOWARD_CHANNEL, RobotMap.REVERSE_CHANNEL);
+    clawGrabSolenoid.set(CLOSED);
   }
 
   public void openClaw()
@@ -59,18 +57,14 @@ public class Claw extends Subsystem {
     //else
      // openClaw();
 
-     if (gamepad.getButtonStateX())
-     {
-        closeClaw();
-     }
-     else if (gamepad.getButtonStateY())
-     {
-        openClaw();
-     }
+    if (gamepad.getButtonStateX())
+      closeClaw();
+    else if (gamepad.getButtonStateY())
+      openClaw();
   }
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
-    // setDefaultCommand(new MySpecialCommand());
+    setDefaultCommand(new TestSolenoid());
   }
 }

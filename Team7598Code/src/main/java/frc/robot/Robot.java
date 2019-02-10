@@ -11,8 +11,6 @@ import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
-import frc.robot.subsystems.UltrasonicSensor;
-import frc.robot.subsystems.Drive;
 import frc.robot.subsystems.Claw;
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -22,9 +20,7 @@ import frc.robot.subsystems.Claw;
  * project.
  */
 public class Robot extends TimedRobot {
-  public static Drive m_drive = new Drive();
   public static OI m_oi;
-  public static UltrasonicSensor m_ultraSens;
   public static Claw m_claw;
 
   Command m_autonomousCommand;
@@ -37,7 +33,6 @@ public class Robot extends TimedRobot {
   @Override
   public void robotInit() {
     m_oi = new OI();
-    m_ultraSens = new UltrasonicSensor();
     m_claw = new Claw();
   }
 
