@@ -157,5 +157,4 @@ public class Gamepad extends Joystick {
     {
         return new JoystickButton(this, RobotMap.BUTTON_TRIGGER_R);
     }
-
 }
