@@ -12,7 +12,6 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import frc.robot.subsystems.UltrasonicSensor;
-import frc.robot.subsystems.AbsoluteEncoder;
 import frc.robot.subsystems.Drive;
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -22,10 +21,9 @@ import frc.robot.subsystems.Drive;
  * project.
  */
 public class Robot extends TimedRobot {
-  public static Drive m_drive = new Drive();
   public static OI m_oi;
   public static UltrasonicSensor m_ultraSens;
-  public static AbsoluteEncoder m_encoder;
+  public static Drive m_drive;
 
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();
@@ -37,8 +35,8 @@ public class Robot extends TimedRobot {
   @Override
   public void robotInit() {
     m_oi = new OI();
+    m_drive = new Drive();
     m_ultraSens = new UltrasonicSensor();
-    m_encoder = new AbsoluteEncoder();
   }
 
   /**

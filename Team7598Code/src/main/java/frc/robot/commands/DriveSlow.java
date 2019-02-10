@@ -26,7 +26,7 @@ public class DriveSlow extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    if (gamePad.getButtonStateB() && Robot.m_ultraSens.getValue() <= 400)
+    if (gamePad.getButtonStateB() && (Robot.m_ultraSens.getValue() <= 400))
     {
       Robot.m_drive.driveSlow(gamePad);
     }
