@@ -19,12 +19,10 @@ public class NewMotors extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
   public NewMotors(){
-   VictorSP testdigital = new VictorSP(RobotMap.DIGITAL_MOTOR);
-   VictorSP testMotor1 = new VictorSP(RobotMap.TEST_MOTOR1);
-   VictorSP testMotor2 = new VictorSP(RobotMap.TEST_MOTOR2);
-   VictorSP testMotor3 = new VictorSP(RobotMap.TEST_MOTOR3);
-
-
+    // VictorSP testdigital = new VictorSP(RobotMap.DIGITAL_MOTOR);
+    // VictorSP testMotor1 = new VictorSP(RobotMap.TEST_MOTOR1);
+    // VictorSP testMotor2 = new VictorSP(RobotMap.TEST_MOTOR2);
+    // VictorSP testMotor3 = new VictorSP(RobotMap.TEST_MOTOR3);
   }
 
   @Override

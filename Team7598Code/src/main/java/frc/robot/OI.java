@@ -6,7 +6,7 @@
 /*----------------------------------------------------------------------------*/
 
 package frc.robot;
-import edu.wpi.first.wpilibj.Joystick;
+import frc.robot.subsystems.Gamepad;
 import frc.robot.RobotMap;
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -19,7 +19,7 @@ public class OI {
   // You create one by telling it which joystick it's on and which button
   // number it is.
   // Joystick stick = new Joystick(port);
-  Joystick driverstick = new Joystick(RobotMap.DRIVER);
+  Gamepad driverstick = new Gamepad(RobotMap.DRIVER);
   
 
   // Button button = new JoystickButton(stick, buttonNumber);
@@ -48,10 +48,8 @@ public class OI {
   // Start the command when the button is released and let it run the command
   // until it is finished as determined by it's isFinished method.
   // button.whenReleased(new ExampleCommand());
-  public Joystick getDriverJoystick()
-   {
+  public Gamepad getDriverJoystick()
+  {
     return driverstick;
-
   }
-  
 }

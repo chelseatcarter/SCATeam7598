@@ -16,8 +16,8 @@ package frc.robot;
  * the wiring easier and significantly reduces the number of magic numbers
  * floating around.
  */
-public class RobotMap {
-
+public class RobotMap 
+{
   //motors
   public static final int FRONT_LEFT_MOTOR = 2;
   public static final int FRONT_RIGHT_MOTOR = 4;
@@ -28,7 +28,6 @@ public class RobotMap {
   public static final int DRIVER = 0;
 
   //buttons (driver)
-  
   public static final int DRIVER_LEFT_X_AXIS = 0;
   public static final int DRIVER_LEFT_Y_AXIS = 1;
   public static final int DRIVER_RIGHT_X_AXIS = 4;
@@ -43,10 +42,10 @@ public class RobotMap {
 	public static final int DRIVER_LB = 5;
 	public static final int DRIVER_RB = 6;
 	public static final int DRIVER_START = 7;
-    public static final int DRIVER_BACK = 8; 
+  public static final int DRIVER_BACK = 8; 
     
-    //buttons (operator)
-    public static final int OPERATOR_LEFT_X_AXIS = 0;
+  //buttons (operator)
+  public static final int OPERATOR_LEFT_X_AXIS = 0;
   public static final int OPERATOR_LEFT_Y_AXIS = 1;
   public static final int OPERATOR_RIGHT_X_AXIS = 4;
   public static final int OPERATOR_RIGHT_Y_AXIS = 5;
@@ -60,27 +59,5 @@ public class RobotMap {
 	public static final int OPERATOR_LB = 5;
 	public static final int OPERATOR_RB = 6;
 	public static final int OPERATOR_START = 7;
-    public static final int OPERATOR_BACK = 8;   
-  
-  public static final int ENCODER_CHANNEL= 1;
-
-  // For example to map the left and right motors, you could define the
-  // following variables to use with your drivetrain subsystem.
-  // public static int leftMotor = 1;
-  // public static int rightMotor = 2;
-  public static int fowardDoubleSolenoid =  0;
-  public static int reverseDoubleSolenoid = 1;
-
-  //ultrasonic sensor port
-  public static int ultrasonicSensorPort = 0;
-
-
-
-  // If you are using multiple modules, make sure to define both the port
-  // number and the module. For example you with a rangefinder:
-  // public static int rangefinderPort = 1;
-  // public static int rangefinderModule = 1;
-
-  
- 
+  public static final int OPERATOR_BACK = 8;   
 }

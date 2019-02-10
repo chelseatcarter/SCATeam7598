@@ -13,7 +13,6 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 //import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.subsystems.Drive;
-import frc.robot.subsystems.AbsoluteEncoder;
 import frc.robot.subsystems.Camera;
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -27,7 +26,6 @@ public class Robot extends TimedRobot {
   public static Drive m_drive = new Drive();
   public static OI m_oi;
   public static Camera m_camera = new Camera();
-	public static AbsoluteEncoder m_encoder;
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();
 
@@ -38,7 +36,6 @@ public class Robot extends TimedRobot {
   @Override
   public void robotInit() {
     m_oi = new OI();
-    m_encoder =  new AbsoluteEncoder();
 
    // m_chooser.setDefaultOption("Default Auto", new ExampleCommand());
     // chooser.addOption("My Auto", new MyAutoCommand());

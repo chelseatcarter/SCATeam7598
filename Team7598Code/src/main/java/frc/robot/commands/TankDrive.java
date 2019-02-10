@@ -12,13 +12,13 @@ import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 //import frc.robot.RobotMap;
 //import frc.robot.OI;
-import edu.wpi.first.wpilibj.Joystick;
+import frc.robot.subsystems.Gamepad;
 //import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 
 
 public class TankDrive extends Command {
 
-  private Joystick driver;
+  private Gamepad driver;
 
   public TankDrive() {
     // Use requires() here to declare subsystem dependencies
@@ -34,7 +34,6 @@ public class TankDrive extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-   
     Robot.m_drive.throttledTankDrive(driver);
   }
 
@@ -53,6 +52,5 @@ public class TankDrive extends Command {
   // subsystems is scheduled to run
   @Override
   protected void interrupted() {
-  
   }
 }

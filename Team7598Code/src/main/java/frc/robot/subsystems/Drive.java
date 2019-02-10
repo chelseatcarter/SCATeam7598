@@ -11,8 +11,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
 import frc.robot.commands.TankDrive;
 import edu.wpi.first.wpilibj.Talon;
-import edu.wpi.first.wpilibj.Joystick;
-
+import frc.robot.subsystems.Gamepad;
 
 /**
  * Add your docs here.
@@ -24,8 +23,7 @@ public class Drive extends Subsystem {
   public static Talon backLeftMotor;
   public static Talon backRightMotor;
   public double maxDriveVal = 0.52;
-  // Put methods for controlling this subsystem
-  // here. Call these from Commands.
+  
   public Drive()
   {
     frontLeftMotor = new Talon(RobotMap.FRONT_LEFT_MOTOR);
@@ -40,21 +38,19 @@ public class Drive extends Subsystem {
     // Set the default command for a subsystem here.
     setDefaultCommand(new TankDrive());
   }
-  public double driveRight(Joystick driver)
+  public double driveRight(Gamepad driver)
   {
-     double rightDriverVal = driver.getRawAxis(RobotMap.DRIVER_RIGHT_Y_AXIS);
-     return rightDriverVal;
+    double rightDriverVal = driver.getRawAxis(RobotMap.DRIVER_RIGHT_Y_AXIS);
+    return rightDriverVal;
   }
 
-  public double driveLeft(Joystick driver)
+  public double driveLeft(Gamepad driver)
   {
-     double leftDriverVal = -1.0*driver.getRawAxis(RobotMap.DRIVER_LEFT_Y_AXIS);
-     return leftDriverVal;
+    double leftDriverVal = -1.0*driver.getRawAxis(RobotMap.DRIVER_LEFT_Y_AXIS);
+    return leftDriverVal;
   }
 
-
-
-  public void throttledTankDrive(Joystick driver)
+  public void throttledTankDrive(Gamepad driver)
   {
     frontLeftMotor.set(driveLeft(driver)*maxDriveVal);
     frontRightMotor.set(driveRight(driver)*maxDriveVal);

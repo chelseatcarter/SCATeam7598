@@ -16,15 +16,12 @@ import edu.wpi.cscore.UsbCamera;
 public class Camera extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
- UsbCamera camera = null;
+  UsbCamera camera;
 
  public Camera(){
-
   camera = CameraServer.getInstance().startAutomaticCapture();
   camera.setResolution(640, 480);
   camera.setFPS(20);
-
-
  }
   @Override
   public void initDefaultCommand() {
