@@ -22,31 +22,24 @@ public class UltrasonicSensor extends Subsystem {
 
   AnalogInput mb1013;
   double distance;
-  public final double V5mm;
+  private final double DISTANCE_OFFSET = 15.5;
+
   public UltrasonicSensor()
   {
-    mb1013 = new AnalogInput(RobotMap.ultrasonicSensorPort);
-    V5mm =((double)5.0/4096.0);
-    System.out.println(V5mm);
+    mb1013 = new AnalogInput(RobotMap.ULTRASONIC_SENSOR_CHANNEL);
   }
 
  // returns distance from object in mm 
   public double getValue()
   {
-    // SmartDashboard.putNumber("Analog Value (0-4096):",mb1013.getValue());
-    // double voltage = mb1013.getVoltage();
-    // SmartDashboard.putNumber("Voltage: " , voltage);
-    // double distance = (voltage/V5mm) * 5;
-    SmartDashboard.putNumber("Distance (mm): ",mb1013.getValue() * 1.25);
+    distance = (mb1013.getValue() * 1.25) - DISTANCE_OFFSET;
+    SmartDashboard.putNumber("Distance (mm):", distance);
     return distance;
-
   }
 
 
   @Override
   public void initDefaultCommand() {
-    // Set the default command for a subsystem here.
-    // setDefaultCommand(new MySpecialCommand());
     setDefaultCommand(new getSensorVals());
   }
 }
