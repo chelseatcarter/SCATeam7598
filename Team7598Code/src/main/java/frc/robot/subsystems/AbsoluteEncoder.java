@@ -32,7 +32,7 @@ public class AbsoluteEncoder extends Subsystem {
 
   public AbsoluteEncoder()
   {
-    encoder = new AnalogInput(RobotMap.ENCODER_CHANNEL);
+    encoder = new AnalogInput(RobotMap.AM2899_ENCODER_CHANNEL);
   }
 
   @Override
