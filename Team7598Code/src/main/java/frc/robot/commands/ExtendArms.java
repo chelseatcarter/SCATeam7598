@@ -9,26 +9,36 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 
-public class CameraRun extends Command {
-  public CameraRun() {
+public class ExtendArms extends Command {
+
+  public boolean done;
+  public double dist;
+  public double time;
+  public ExtendArms(double distToDrive, double seconds) {
     // Use requires() here to declare subsystem dependencies
-    // eg. requires(chassis);
+    //requires(robot.m_arms);
+    distToDrive = dist;
+    seconds = time;
   }
 
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
+    done = false;
   }
+  
+
 
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
+    
   }
 
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
-    return false;
+    return done;
   }
 
   // Called once after isFinished returns true

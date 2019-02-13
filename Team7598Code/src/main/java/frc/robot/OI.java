@@ -20,6 +20,7 @@ public class OI {
   // number it is.
   // Joystick stick = new Joystick(port);
   Gamepad driverstick = new Gamepad(RobotMap.DRIVER);
+  Gamepad operatorstick = new Gamepad(RobotMap.OPERATOR);
   
 
   // Button button = new JoystickButton(stick, buttonNumber);
@@ -51,5 +52,9 @@ public class OI {
   public Gamepad getDriverJoystick()
   {
     return driverstick;
+  }
+
+  public Gamepad getOperatorJoystick(){
+      return operatorstick;
   }
 }

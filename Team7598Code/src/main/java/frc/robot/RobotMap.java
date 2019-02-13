@@ -26,6 +26,7 @@ public class RobotMap
 
   //controllers
   public static final int DRIVER = 0;
+  public static final int OPERATOR = 1;
 
   //buttons (driver)
   public static final int DRIVER_LEFT_X_AXIS = 0;

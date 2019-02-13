@@ -19,14 +19,12 @@ public class ClimbToLevelTwo extends CommandGroup {
     // addSequential(new Command2());
     // these will run in order.
 
-    //addSquential(Drive(.12));
-    //addSequential(DeployFrontArm());
-    //addSequential(Drive(.4));
-    //addSequential(DeployBackArm());
-    //addSequential(Drive(.5));
-    //addParallel(RetractFrontArm());
-    //addSequential(Drive(.2));
-    //addSequential(RetractBackArm());
+    //addSquential(DriveStraight(aDistance));
+    //addSequential(ExtendArms());
+    //addSequential(DriveStraight(anotherDistance));
+    //addParallel(MoveFrontArmMotors(theSameDistance));
+    //addSequential(StopMotors());
+    //addSequential(RetractArms());
 
     // To run multiple commands at the same time,
     // use addParallel()
