@@ -16,14 +16,19 @@ package frc.robot;
  * the wiring easier and significantly reduces the number of magic numbers
  * floating around.
  */
+
 public class RobotMap {
   //controllers
   public static final int DRIVER = 0;
   
   // For example to map the left and right motors, you could define the
   // following variables to use with your drivetrain subsystem.
-  public static final int FOWARD_CHANNEL =  0;
-  public static final int REVERSE_CHANNEL = 4;
+  public static final int FORWARD_CHANNEL_CLAW =  0;
+  public static final int REVERSE_CHANNEL_CLAW = 1;
+  public static final int FORWARD_CHANNEL_H1 = 2;
+  public static final int REVERSE_CHANNEL_H1 = 3;
+  public static final int FORWARD_CHANNEL_H2 = 4;
+  public static final int REVERSE_CHANNEL_H2 = 5;
 
   //gamepad buttons
   public static final int BUTTON_X= 3;

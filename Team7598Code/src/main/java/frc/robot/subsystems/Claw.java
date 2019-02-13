@@ -26,7 +26,7 @@ public class Claw extends Subsystem {
 
   public Claw()
   {
-    clawGrabSolenoid = new DoubleSolenoid(RobotMap.FOWARD_CHANNEL, RobotMap.REVERSE_CHANNEL);
+    clawGrabSolenoid = new DoubleSolenoid(RobotMap.FORWARD_CHANNEL_CLAW, RobotMap.REVERSE_CHANNEL_CLAW);
     clawGrabSolenoid.set(CLOSED);
   }
 

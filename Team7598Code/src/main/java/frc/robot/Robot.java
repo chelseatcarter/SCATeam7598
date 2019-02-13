@@ -12,6 +12,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import frc.robot.subsystems.Claw;
+import frc.robot.subsystems.HatchArms;
 /**
  * The VM is configured to automatically run this class, and to call the
  * functions corresponding to each mode, as described in the TimedRobot
@@ -22,6 +23,7 @@ import frc.robot.subsystems.Claw;
 public class Robot extends TimedRobot {
   public static OI m_oi;
   public static Claw m_claw;
+  public static HatchArms m_hatchArms;
 
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();
@@ -34,6 +36,7 @@ public class Robot extends TimedRobot {
   public void robotInit() {
     m_oi = new OI();
     m_claw = new Claw();
+    m_hatchArms = new HatchArms();
   }
 
   /**
