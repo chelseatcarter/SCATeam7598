@@ -7,9 +7,9 @@
 
 package frc.robot.subsystems;
 
-import frc.robot.RobotMap;
+
 import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.buttons.JoystickButton;
+
 
 public class Gamepad extends Joystick {
 
