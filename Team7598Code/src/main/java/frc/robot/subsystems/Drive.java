@@ -12,24 +12,25 @@ import frc.robot.RobotMap;
 import frc.robot.commands.TankDrive;
 import edu.wpi.first.wpilibj.Talon;
 import frc.robot.subsystems.Gamepad;
+import edu.wpi.first.wpilibj.Victor;
 
 /**
  * Add your docs here.
  */
 public class Drive extends Subsystem {
 
-  public static Talon frontLeftMotor;
-  public static Talon frontRightMotor;
-  public static Talon backLeftMotor;
-  public static Talon backRightMotor;
+  public static Victor frontLeftMotor;
+  public static Victor frontRightMotor;
+  public static Victor backLeftMotor;
+  public static Victor backRightMotor;
   public double maxDriveVal = 0.52;
   
   public Drive()
   {
-    frontLeftMotor = new Talon(RobotMap.FRONT_LEFT_MOTOR);
-    frontRightMotor = new Talon(RobotMap.FRONT_RIGHT_MOTOR);
-    backLeftMotor = new Talon(RobotMap.BACK_LEFT_MOTOR);
-    backRightMotor = new Talon(RobotMap.BACK_RIGHT_MOTOR); 
+    frontLeftMotor = new Victor(RobotMap.FRONT_LEFT_MOTOR);
+    frontRightMotor = new Victor(RobotMap.FRONT_RIGHT_MOTOR);
+    backLeftMotor = new Victor(RobotMap.BACK_LEFT_MOTOR);
+    backRightMotor = new Victor(RobotMap.BACK_RIGHT_MOTOR); 
   }
   @Override
   public void initDefaultCommand() {
