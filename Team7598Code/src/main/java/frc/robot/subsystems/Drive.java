@@ -10,13 +10,10 @@ package frc.robot.subsystems;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
 import frc.robot.commands.TankDrive;
-<<<<<<< HEAD
 import edu.wpi.first.wpilibj.Victor;
-=======
-//import edu.wpi.first.wpilibj.Talon;
->>>>>>> c93efc43cf26f4370d1e8eac36a91e446091474e
 import frc.robot.subsystems.Gamepad;
 import edu.wpi.first.wpilibj.Victor;
+import edu.wpi.first.wpilibj.PWM;
 
 /**
  * Add your docs here.
@@ -29,7 +26,7 @@ public class Drive extends Subsystem {
   public static Victor backRightMotor;
   public double maxDriveVal = 0.52;
 
-  public static Victor climbMotor;
+  public static PWM climbMotor;
   public double liftVal = 0.4;
   
   public Drive()
@@ -38,11 +35,8 @@ public class Drive extends Subsystem {
     frontRightMotor = new Victor(RobotMap.FRONT_RIGHT_MOTOR);
     backLeftMotor = new Victor(RobotMap.BACK_LEFT_MOTOR);
     backRightMotor = new Victor(RobotMap.BACK_RIGHT_MOTOR); 
-<<<<<<< HEAD
 
-    climbMotor = new Victor(RobotMap.CLIMB_MOTOR);
-=======
->>>>>>> c93efc43cf26f4370d1e8eac36a91e446091474e
+    climbMotor = new PWM(RobotMap.CLIMB_MOTOR);
   }
   @Override
   public void initDefaultCommand() {
@@ -72,11 +66,11 @@ public class Drive extends Subsystem {
   }
 
   public void climbUp(){
-    climbMotor.set(liftVal);
+    climbMotor.setSpeed(liftVal);
   }
 
   public void climbDown(){
-    climbMotor.set(-1*liftVal);
+    climbMotor.setSpeed(-1*liftVal);
   }
 }
 
