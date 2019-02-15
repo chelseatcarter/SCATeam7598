@@ -24,6 +24,8 @@ public class RobotMap
   public static final int BACK_LEFT_MOTOR = 0;
   public static final int BACK_RIGHT_MOTOR =3;
 
+  public static final int CLIMB_MOTOR = 1; 
+
   //controllers
   public static final int DRIVER = 0;
   public static final int OPERATOR = 1;

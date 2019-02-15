@@ -7,7 +7,11 @@
 
 package frc.robot;
 import frc.robot.subsystems.Gamepad;
+import edu.wpi.first.wpilibj.buttons.Button;
 import frc.robot.RobotMap;
+import frc.robot.commands.ExtendArms;
+import frc.robot.commands.RetractArms;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
 /**
  * This class is the glue that binds the controls on the physical operator
  * interface to the commands and command groups that allow control of the robot.
@@ -21,6 +25,18 @@ public class OI {
   // Joystick stick = new Joystick(port);
   Gamepad driverstick = new Gamepad(RobotMap.DRIVER);
   Gamepad operatorstick = new Gamepad(RobotMap.OPERATOR);
+  Button driverLB = new JoystickButton(driverstick, RobotMap.DRIVER_LB);
+  Button driverRB = new JoystickButton(driverstick, RobotMap.DRIVER_RB);
+  
+
+
+  public OI(){
+
+    driverLB.whileHeld(new ExtendArms());
+    driverRB.whileHeld(new RetractArms());
+
+  }
+  
   
 
   // Button button = new JoystickButton(stick, buttonNumber);
@@ -37,6 +53,7 @@ public class OI {
   //RobotMap.DRIVER_B.whenPressed(new SomeOtherCommand());
   //RobotMap.DRIVER_Y.whenPressed(new someOtherOtherCommand());
   //RobotMap.Driver_X.whenPressed(new someVeryDifferentCommand());
+  
 
   // Start the command when the button is pressed and let it run the command
   // until it is finished as determined by it's isFinished method.

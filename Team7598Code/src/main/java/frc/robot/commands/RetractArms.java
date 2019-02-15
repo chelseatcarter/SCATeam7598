@@ -10,12 +10,8 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 
-public class ExtendArms extends Command {
-
-  public boolean done;
-  public double dist;
-  public double time;
-  public ExtendArms() {
+public class RetractArms extends Command {
+  public RetractArms() {
     // Use requires() here to declare subsystem dependencies
     requires(Robot.m_drive);
   }
@@ -23,23 +19,19 @@ public class ExtendArms extends Command {
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
-    done = false;
   }
-  
-
 
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
 
-    Robot.m_drive.climbUp();
-    
+    Robot.m_drive.climbDown();
   }
 
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
-    return done;
+    return false;
   }
 
   // Called once after isFinished returns true
