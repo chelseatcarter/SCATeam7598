@@ -27,7 +27,7 @@ public class Drive extends Subsystem {
   public double maxDriveVal = 0.52;
 
   public static PWM climbMotor;
-  public double liftVal = 0.4;
+  public double liftVal = 0.1;
   
   public Drive()
   {
