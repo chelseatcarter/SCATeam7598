@@ -11,9 +11,11 @@ import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
-//import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.subsystems.Drive;
 import frc.robot.subsystems.Camera;
+import frc.robot.subsystems.Claw;
+import frc.robot.subsystems.HatchArms;
 /**
  * The VM is configured to automatically run this class, and to call the
  * functions corresponding to each mode, as described in the TimedRobot
@@ -22,10 +24,12 @@ import frc.robot.subsystems.Camera;
  * project.
  */
 public class Robot extends TimedRobot {
-  //public static ExampleSubsystem m_subsystem = new ExampleSubsystem();
-  public static Drive m_drive = new Drive();
+  public static Drive m_drive;
   public static OI m_oi;
-  public static Camera m_camera = new Camera();
+  public static Camera m_camera;
+  public static Claw m_claw;
+  public static HatchArms m_hatchArms;
+
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();
 
@@ -35,11 +39,10 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void robotInit() {
+    m_camera = new Camera();
     m_oi = new OI();
-
-   // m_chooser.setDefaultOption("Default Auto", new ExampleCommand());
-    // chooser.addOption("My Auto", new MyAutoCommand());
-    //SmartDashboard.putData("Auto mode", m_chooser);
+    m_claw = new Claw();
+    m_hatchArms = new HatchArms();
   }
 
   /**

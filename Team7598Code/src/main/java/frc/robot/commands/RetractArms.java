@@ -13,7 +13,8 @@ import frc.robot.Robot;
 public class RetractArms extends Command {
   public RetractArms() {
     // Use requires() here to declare subsystem dependencies
-    requires(Robot.m_drive);
+    // eg. requires(chassis);
+    requires(Robot.m_hatchArms);
   }
 
   // Called just before this Command runs the first time
@@ -24,8 +25,7 @@ public class RetractArms extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-
-    Robot.m_drive.climbDown();
+    Robot.m_hatchArms.unextendArm();
   }
 
   // Make this return true when this Command no longer needs to run execute()

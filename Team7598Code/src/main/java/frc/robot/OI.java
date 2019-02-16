@@ -6,72 +6,52 @@
 /*----------------------------------------------------------------------------*/
 
 package frc.robot;
+import frc.robot.RobotMap;
 import frc.robot.subsystems.Gamepad;
 import edu.wpi.first.wpilibj.buttons.Button;
-import frc.robot.RobotMap;
-import frc.robot.commands.ExtendArms;
+import frc.robot.commands.GrabHatch;
+import frc.robot.commands.ReleaseHatch;
 import frc.robot.commands.RetractArms;
-import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import frc.robot.commands.ExtendArms;
+
 /**
  * This class is the glue that binds the controls on the physical operator
  * interface to the commands and command groups that allow control of the robot.
  */
+
 public class OI {
-  //// CREATING BUTTONS
-  // One type of button is a joystick button which is any button on a
-  //// joystick.
-  // You create one by telling it which joystick it's on and which button
-  // number it is.
-  // Joystick stick = new Joystick(port);
-  Gamepad driverstick = new Gamepad(RobotMap.DRIVER);
-  Gamepad operatorstick = new Gamepad(RobotMap.OPERATOR);
-  Button driverLB = new JoystickButton(driverstick, RobotMap.DRIVER_LB);
-  Button driverRB = new JoystickButton(driverstick, RobotMap.DRIVER_RB);
-  
-
-
+  Gamepad driverstick;
+  Gamepad operatorstick;
   public OI(){
+    driverstick = new Gamepad(RobotMap.DRIVER);
+    operatorstick = new Gamepad(RobotMap.OPERATOR);
+    // Button driverLB = operatorstick.getOperatorLB();
+    // Button driverRB = operatorstick.getOperatorRB();
+    // Button Bbutton = operatorstick.getOperatorButtonB();
+    // Button Ybutton = operatorstick.getOperatorButtonY();
+
+    Button driverLB = driverstick.getDriverLB();
+    Button driverRB = driverstick.getDriverRB();
+    Button Bbutton = driverstick.getDriverButtonB();
+    Button Ybutton = driverstick.getDriverButtonY();
+    Button RTrigger = driverstick.getRightTriggerClick();
+    Button LTrigger = driverstick.getLeftTriggerClick();
+
 
     driverLB.whenPressed(new ExtendArms());
     driverRB.whenPressed(new RetractArms());
-
+    Bbutton.whenPressed(new GrabHatch());
+    Ybutton.whenPressed(new ReleaseHatch());
+    RTrigger.whenPressed(new RetractArms());
+    LTrigger.whenPressed(new ExtendArms());
   }
-  
-  
 
-  // Button button = new JoystickButton(stick, buttonNumber);
-
-  // There are a few additional built in buttons you can use. Additionally,
-  // by subclassing Button you can create custom triggers and bind those to
-  // commands the same as any other Button.
-
-  //// TRIGGERING COMMANDS WITH BUTTONS
-  // Once you have a button, it's trivial to bind it to a button in one of
-  // three ways:
-
-  //RobotMap.DRIVER_A.whenPressed(new SomeCommand());
-  //RobotMap.DRIVER_B.whenPressed(new SomeOtherCommand());
-  //RobotMap.DRIVER_Y.whenPressed(new someOtherOtherCommand());
-  //RobotMap.Driver_X.whenPressed(new someVeryDifferentCommand());
-  
-
-  // Start the command when the button is pressed and let it run the command
-  // until it is finished as determined by it's isFinished method.
-  // button.whenPressed(new ExampleCommand());
-
-  // Run the command while the button is being held down and interrupt it once
-  // the button is released.
-  // button.whileHeld(new ExampleCommand());
-
-  // Start the command when the button is released and let it run the command
-  // until it is finished as determined by it's isFinished method.
-  // button.whenReleased(new ExampleCommand());
   public Gamepad getDriverJoystick()
   {
     return driverstick;
   }
 
   public Gamepad getOperatorJoystick(){
-      return operatorstick;
+    return operatorstick;
   }
 }
