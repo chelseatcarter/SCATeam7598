@@ -38,8 +38,8 @@ public class OI {
     Button LTrigger = driverstick.getLeftTriggerClick();
 
 
-    driverLB.whenPressed(new ExtendArms());
-    driverRB.whenPressed(new RetractArms());
+    // driverLB.whenPressed(new ExtendArms());
+    // driverRB.whenPressed(new RetractArms());
     Bbutton.whenPressed(new GrabHatch());
     Ybutton.whenPressed(new ReleaseHatch());
     RTrigger.whenPressed(new RetractArms());

@@ -27,7 +27,7 @@ public class Drive extends Subsystem {
   public double maxDriveVal = 0.52;
 
   public static PWM climbMotor;
-  public double liftVal = 0.4;
+  public double liftVal = 0.6;
   
   public Drive()
   {
@@ -36,7 +36,7 @@ public class Drive extends Subsystem {
    // backLeftMotor = new Victor(RobotMap.BACK_LEFT_MOTOR);
     //backRightMotor = new Victor(RobotMap.BACK_RIGHT_MOTOR);
 
-    climbMotor = new PWM(RobotMap.CLIMB_MOTOR);
+    // climbMotor = new PWM(RobotMap.CLIMB_MOTOR);
   }
   @Override
   public void initDefaultCommand() {

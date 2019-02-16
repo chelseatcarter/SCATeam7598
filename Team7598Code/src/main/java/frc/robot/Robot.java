@@ -39,10 +39,13 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void robotInit() {
-    m_camera = new Camera();
-    m_oi = new OI();
     m_claw = new Claw();
     m_hatchArms = new HatchArms();
+    m_drive = new Drive();
+    m_camera = new Camera();
+    m_oi = new OI();
+
+    
   }
 
   /**
