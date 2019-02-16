@@ -32,8 +32,8 @@ public class OI {
 
   public OI(){
 
-    driverLB.whileHeld(new ExtendArms());
-    driverRB.whileHeld(new RetractArms());
+    driverLB.whenPressed(new ExtendArms());
+    driverRB.whenPressed(new RetractArms());
 
   }
   

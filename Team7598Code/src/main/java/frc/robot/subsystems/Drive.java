@@ -34,7 +34,7 @@ public class Drive extends Subsystem {
     frontLeftMotor = new Victor(RobotMap.FRONT_LEFT_MOTOR);
     frontRightMotor = new Victor(RobotMap.FRONT_RIGHT_MOTOR);
     backLeftMotor = new Victor(RobotMap.BACK_LEFT_MOTOR);
-    backRightMotor = new Victor(RobotMap.BACK_RIGHT_MOTOR); 
+    backRightMotor = new Victor(RobotMap.BACK_RIGHT_MOTOR);
 
     climbMotor = new PWM(RobotMap.CLIMB_MOTOR);
   }
