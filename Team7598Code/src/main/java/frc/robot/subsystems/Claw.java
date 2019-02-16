@@ -10,7 +10,7 @@ package frc.robot.subsystems;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import frc.robot.RobotMap;
-import frc.robot.commands.TestSolenoid;
+//import frc.robot.commands.TestSolenoid;
 import frc.robot.subsystems.Gamepad;
 
 /**
@@ -57,14 +57,15 @@ public class Claw extends Subsystem {
     //else
      // openClaw();
 
-    if (gamepad.getButtonStateX())
+    if (gamepad.getButtonStateB())
       closeClaw();
     else if (gamepad.getButtonStateY())
       openClaw();
   }
+  
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
-    setDefaultCommand(new TestSolenoid());
+    //setDefaultCommand(new TestSolenoid());
   }
 }

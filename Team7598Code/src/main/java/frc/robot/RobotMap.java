@@ -19,7 +19,7 @@ package frc.robot;
 
 public class RobotMap {
   //controllers
-  public static final int DRIVER = 0;
+  public static final int OPERATOR = 0;
   
   // For example to map the left and right motors, you could define the
   // following variables to use with your drivetrain subsystem.
@@ -31,6 +31,10 @@ public class RobotMap {
   public static final int REVERSE_CHANNEL_H2 = 5;
 
   //gamepad buttons
-  public static final int BUTTON_X= 3;
+  public static final int BUTTON_B = 2;
   public static final int BUTTON_Y = 4;
+  
+  public static final int BUTTON_TRIGGER_L = 2;
+  public static final int BUTTON_TRIGGER_R= 3;
+
 }

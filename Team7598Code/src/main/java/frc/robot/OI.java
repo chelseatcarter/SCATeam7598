@@ -8,18 +8,39 @@
 package frc.robot;
 import frc.robot.RobotMap;
 import frc.robot.subsystems.Gamepad;
+import edu.wpi.first.wpilibj.buttons.Button;
+import frc.robot.commands.GrabHatch;
+import frc.robot.commands.ReleaseHatch;
+import frc.robot.commands.RetractArms;
+import frc.robot.commands.ExtendArms;
+
 /**
  * This class is the glue that binds the controls on the physical operator
  * interface to the commands and command groups that allow control of the robot.
  */
+
 public class OI {
-  //// CREATING BUTTONS
+
+  Gamepad operator;
+  public OI()
+  {
+    operator = new Gamepad(RobotMap.OPERATOR);
+    Button Bbutton = operator.getButtonB();
+    Button Ybutton = operator.getButtonY();
+    Button RTrigger = operator.getRightTriggerClick();
+    Button LTrigger = operator.getLeftTriggerClick();
+  
+    Bbutton.whenPressed(new GrabHatch());
+    Ybutton.whenPressed(new ReleaseHatch());
+    RTrigger.whenPressed(new RetractArms());
+    LTrigger.whenPressed(new ExtendArms());
+  }
+    //// CREATING BUTTONS
   // One type of button is a joystick button which is any button on a
   //// joystick.
   // You create one by telling it which joystick it's on and which button
   // number it is.
-  Gamepad gamepad = new Gamepad(RobotMap.DRIVER);
-  
+
   // Button button = new JoystickButton(stick, buttonNumber);
 
   // There are a few additional built in buttons you can use. Additionally,
@@ -41,8 +62,8 @@ public class OI {
   // Start the command when the button is released and let it run the command
   // until it is finished as determined by it's isFinished method.
   // button.whenReleased(new ExampleCommand());
-  public Gamepad getDriverJoystick()
+  public Gamepad getOperatorJoystick()
   {
-    return gamepad;
+    return operator;
   } 
 }

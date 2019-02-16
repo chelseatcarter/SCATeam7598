@@ -19,9 +19,9 @@ public class Gamepad extends Joystick {
     }
     
     //return state of Button X
-    public boolean getButtonStateX()
+    public boolean getButtonStateB()
     {
-        return getRawButton(RobotMap.BUTTON_X);
+        return getRawButton(RobotMap.BUTTON_B);
     }
     
     //return state of Button Y
@@ -31,9 +31,9 @@ public class Gamepad extends Joystick {
     }
 
     //return object ButtonX
-    public JoystickButton getButtonX()
+    public JoystickButton getButtonB()
     {
-        return new JoystickButton(this, RobotMap.BUTTON_X);
+        return new JoystickButton(this, RobotMap.BUTTON_B);
     }
 
     //return object ButtonY
@@ -41,4 +41,17 @@ public class Gamepad extends Joystick {
     {
         return new JoystickButton(this, RobotMap.BUTTON_Y);
     }
+
+    //return object Left Trigger Button
+    public JoystickButton getLeftTriggerClick()
+    {
+        return new JoystickButton(this, RobotMap.BUTTON_TRIGGER_L);
+    }
+
+    //return object RIght Trigger Button
+    public JoystickButton getRightTriggerClick()
+    {
+        return new JoystickButton(this, RobotMap.BUTTON_TRIGGER_R);
+    }
+
 }

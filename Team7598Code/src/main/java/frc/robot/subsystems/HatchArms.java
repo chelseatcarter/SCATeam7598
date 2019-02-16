@@ -10,8 +10,7 @@ package frc.robot.subsystems;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import frc.robot.RobotMap;
-import frc.robot.subsystems.Gamepad;
-import frc.robot.commands.TestHatchArms;
+//import frc.robot.subsystems.Gamepad;
 
 /**
  * Add your docs here.
@@ -23,7 +22,7 @@ public class HatchArms extends Subsystem {
   private DoubleSolenoid hatchArmSolenoid2;
   private static final DoubleSolenoid.Value BACKWARDS = DoubleSolenoid.Value.kReverse;
   private static final DoubleSolenoid.Value EXTEND = DoubleSolenoid.Value.kForward;
-  private Gamepad gamepad;
+  //private Gamepad gamepad;
 
   public HatchArms()
   {
@@ -70,10 +69,10 @@ public class HatchArms extends Subsystem {
     //else
       //extendArm();
 
-  if(gamepad.getButtonStateX()) //need to change the buttons used! Ask drive team + mechanical for which buttons to use
-    extendArm();
-  else if(gamepad.getButtonStateY())
-    unextendArm();
+  // if(gamepad.get) //need to change the buttons used! Ask drive team + mechanical for which buttons to use
+  //   extendArm();
+  // else if(gamepad.getTriggerPressed())
+  //   unextendArm();
 
   }
 
@@ -81,6 +80,6 @@ public class HatchArms extends Subsystem {
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
     // setDefaultCommand(new MySpecialCommand());
-    setDefaultCommand(new TestHatchArms());
+    //setDefaultCommand(new TestHatchArms());
   }
 }
