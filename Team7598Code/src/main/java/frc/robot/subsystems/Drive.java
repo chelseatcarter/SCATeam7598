@@ -22,8 +22,8 @@ public class Drive extends Subsystem {
 
   public static Victor frontLeftMotor;
   public static Victor frontRightMotor;
-  public static Victor backLeftMotor;
-  public static Victor backRightMotor;
+ // public static Victor backLeftMotor;
+  //public static Victor backRightMotor;
   public double maxDriveVal = 0.52;
 
   public static PWM climbMotor;
@@ -33,8 +33,8 @@ public class Drive extends Subsystem {
   {
     frontLeftMotor = new Victor(RobotMap.FRONT_LEFT_MOTOR);
     frontRightMotor = new Victor(RobotMap.FRONT_RIGHT_MOTOR);
-    backLeftMotor = new Victor(RobotMap.BACK_LEFT_MOTOR);
-    backRightMotor = new Victor(RobotMap.BACK_RIGHT_MOTOR);
+   // backLeftMotor = new Victor(RobotMap.BACK_LEFT_MOTOR);
+    //backRightMotor = new Victor(RobotMap.BACK_RIGHT_MOTOR);
 
     climbMotor = new PWM(RobotMap.CLIMB_MOTOR);
   }
@@ -61,8 +61,8 @@ public class Drive extends Subsystem {
   {
     frontLeftMotor.set(driveLeft(driver)*maxDriveVal);
     frontRightMotor.set(driveRight(driver)*maxDriveVal);
-    backLeftMotor.set(driveLeft(driver)*maxDriveVal);
-    backRightMotor.set(driveRight(driver)*maxDriveVal);
+    //backLeftMotor.set(driveLeft(driver)*maxDriveVal);
+    //backRightMotor.set(driveRight(driver)*maxDriveVal);
   }
 
   public void climbUp(){
