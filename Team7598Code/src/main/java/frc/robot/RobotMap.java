@@ -63,10 +63,9 @@ public class RobotMap
   public static final int OPERATOR_BACK = 8;   
   
   //solenoid channels
-  public static final int FORWARD_CHANNEL_CLAW =  0;
-  public static final int REVERSE_CHANNEL_CLAW = 1;
-  public static final int FORWARD_CHANNEL_H1 = 2;
-  public static final int REVERSE_CHANNEL_H1 = 3;
+  public static final int FORWARD_CHANNEL_CLAW =  3;
+  public static final int REVERSE_CHANNEL_CLAW = 2;
+  
   public static final int FORWARD_CHANNEL_H2 = 4;
   public static final int REVERSE_CHANNEL_H2 = 5;
 }

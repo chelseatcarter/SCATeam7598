@@ -39,11 +39,13 @@ public class Robot extends TimedRobot
    */
   @Override
   public void robotInit() {
+    //subsystems that need to be called
     m_claw = new Claw();
     m_hatchArms = new HatchArms();
     m_drive = new Drive();
     m_camera = new Camera();
     m_oi = new OI();
+    //m_climbToLevel2 = new ClimbToLevelTwo();
   }
 
   /**
@@ -95,8 +97,8 @@ public class Robot extends TimedRobot
      */
 
     // schedule the autonomous command (example)
-    //if (m_autonomousCommand != null) {
-     // m_autonomousCommand.start();
+    //if (m_climbToLevel2 != null) {
+     // m_climbToLevel2.start();
     
   }
 

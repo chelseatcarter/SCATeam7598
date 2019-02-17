@@ -13,32 +13,32 @@ import frc.robot.RobotMap;
 
 public class HatchArms extends Subsystem 
 {
-  private DoubleSolenoid hatchArmSolenoid1;
+  
   private DoubleSolenoid hatchArmSolenoid2;
   private static final DoubleSolenoid.Value BACKWARDS = DoubleSolenoid.Value.kReverse;
   private static final DoubleSolenoid.Value EXTEND = DoubleSolenoid.Value.kForward;
 
   public HatchArms()
   {
-    hatchArmSolenoid1 = new DoubleSolenoid(RobotMap.FORWARD_CHANNEL_H1, RobotMap.REVERSE_CHANNEL_H1);
+    
     hatchArmSolenoid2 = new DoubleSolenoid(RobotMap.FORWARD_CHANNEL_H2, RobotMap.REVERSE_CHANNEL_H2);
   }
 
   public void extendArm()
   {
-    hatchArmSolenoid1.set(EXTEND);
+
     hatchArmSolenoid2.set(EXTEND);
   }
 
   public void unextendArm()
   {
-    hatchArmSolenoid1.set(BACKWARDS);
+ 
     hatchArmSolenoid2.set(BACKWARDS);
   }
 
   public boolean isArmExtend1()
   {
-    if (hatchArmSolenoid1.get().equals(EXTEND) && hatchArmSolenoid2.get().equals(EXTEND))
+    if (hatchArmSolenoid2.get().equals(EXTEND))
       return true;
     else
       return false;
@@ -46,7 +46,7 @@ public class HatchArms extends Subsystem
 
   public boolean isArmBackwards()
   {
-    if (hatchArmSolenoid1.get().equals(BACKWARDS) && hatchArmSolenoid2.get().equals(BACKWARDS))
+    if (hatchArmSolenoid2.get().equals(BACKWARDS))
       return true;
     else
       return false;

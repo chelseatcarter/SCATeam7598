@@ -12,7 +12,7 @@ import frc.robot.Robot;
 
 public class ReleaseHatch extends Command {
   public ReleaseHatch() {
-    requires(Robot.m_claw);
+    requires(Robot.m_claw); 
   }
 
   // Called just before this Command runs the first time
@@ -34,7 +34,12 @@ public class ReleaseHatch extends Command {
 
   // Called once after isFinished returns true
   @Override
-  protected void end() {
+  protected void end() { 
+
+
+
+
+
   }
 
   // Called when another command which requires one or more of the same
