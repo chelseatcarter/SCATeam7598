@@ -11,7 +11,6 @@ import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.subsystems.Drive;
 import frc.robot.subsystems.Camera;
 import frc.robot.subsystems.Claw;
@@ -23,7 +22,8 @@ import frc.robot.subsystems.HatchArms;
  * creating this project, you must also update the build.gradle file in the
  * project.
  */
-public class Robot extends TimedRobot {
+public class Robot extends TimedRobot 
+{
   public static Drive m_drive;
   public static OI m_oi;
   public static Camera m_camera;
@@ -44,8 +44,6 @@ public class Robot extends TimedRobot {
     m_drive = new Drive();
     m_camera = new Camera();
     m_oi = new OI();
-
-    
   }
 
   /**

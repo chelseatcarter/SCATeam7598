@@ -19,39 +19,34 @@ import frc.robot.commands.ExtendArms;
  * interface to the commands and command groups that allow control of the robot.
  */
 
-public class OI {
-  Gamepad driverstick;
-  Gamepad operatorstick;
-  public OI(){
-    driverstick = new Gamepad(RobotMap.DRIVER);
-    operatorstick = new Gamepad(RobotMap.OPERATOR);
-    // Button driverLB = operatorstick.getOperatorLB();
-    // Button driverRB = operatorstick.getOperatorRB();
-    // Button Bbutton = operatorstick.getOperatorButtonB();
-    // Button Ybutton = operatorstick.getOperatorButtonY();
+public class OI 
+{
+  Gamepad driverStick;
+  Gamepad operatorStick;
 
-    Button driverLB = driverstick.getDriverLB();
-    Button driverRB = driverstick.getDriverRB();
-    Button Bbutton = driverstick.getDriverButtonB();
-    Button Ybutton = driverstick.getDriverButtonY();
-    Button RTrigger = driverstick.getRightTriggerClick();
-    Button LTrigger = driverstick.getLeftTriggerClick();
+  public OI()
+  {
+    driverStick = new Gamepad(RobotMap.DRIVER);
+    operatorStick = new Gamepad(RobotMap.OPERATOR);
 
+    Button bButton = operatorStick.getOperatorButtonB();
+    Button yButton = operatorStick.getOperatorButtonY();
+    Button lTrigger = driverStick.getOperatorLeftTrigger();
+    Button rTrigger = driverStick.getOperatorRightTrigger();
 
-    // driverLB.whenPressed(new ExtendArms());
-    // driverRB.whenPressed(new RetractArms());
-    Bbutton.whenPressed(new GrabHatch());
-    Ybutton.whenPressed(new ReleaseHatch());
-    RTrigger.whenPressed(new RetractArms());
-    LTrigger.whenPressed(new ExtendArms());
+    bButton.whenPressed(new GrabHatch());
+    yButton.whenPressed(new ReleaseHatch());
+    lTrigger.whileHeld(new ExtendArms());
+    rTrigger.whileHeld(new RetractArms());
   }
 
   public Gamepad getDriverJoystick()
   {
-    return driverstick;
+    return driverStick;
   }
 
-  public Gamepad getOperatorJoystick(){
-    return operatorstick;
+  public Gamepad getOperatorJoystick()
+  {
+    return operatorStick;
   }
 }

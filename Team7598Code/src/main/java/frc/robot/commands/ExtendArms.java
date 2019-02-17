@@ -12,8 +12,6 @@ import frc.robot.Robot;
 
 public class ExtendArms extends Command {
   public ExtendArms() {
-    // Use requires() here to declare subsystem dependencies
-    // eg. requires(chassis);
     requires(Robot.m_hatchArms);
   }
 
@@ -25,7 +23,7 @@ public class ExtendArms extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-  Robot.m_hatchArms.extendArm();
+    Robot.m_hatchArms.extendArm();
   }
 
   // Make this return true when this Command no longer needs to run execute()

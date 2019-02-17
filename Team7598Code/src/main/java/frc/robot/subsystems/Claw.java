@@ -10,23 +10,16 @@ package frc.robot.subsystems;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import frc.robot.RobotMap;
-import frc.robot.subsystems.Gamepad;
 
-/**
- * Add your docs here.
- */
-public class Claw extends Subsystem {
-  // Put methods for controlling this subsystem
-  //create a constructor called Claw
+public class Claw extends Subsystem 
+{
   private DoubleSolenoid clawGrabSolenoid;
   private static final DoubleSolenoid.Value CLOSED = DoubleSolenoid.Value.kReverse;
   private static final DoubleSolenoid.Value OPEN = DoubleSolenoid.Value.kForward;
-  private Gamepad gamepad;
 
   public Claw()
   {
     clawGrabSolenoid = new DoubleSolenoid(RobotMap.FORWARD_CHANNEL_CLAW, RobotMap.REVERSE_CHANNEL_CLAW);
-    clawGrabSolenoid.set(CLOSED);
   }
 
   public void openClaw()
@@ -47,19 +40,6 @@ public class Claw extends Subsystem {
   public boolean isClawClosed()
   {
     return clawGrabSolenoid.get().equals(CLOSED);
-  }
- 
-  public void TestSolenoid()
-  {
-    //if (isClawOpen())
-      //closeClaw();
-    //else
-     // openClaw();
-
-    // if (gamepad.getButtonStateB())
-    //   closeClaw();
-    // else if (gamepad.getButtonStateY())
-    //   openClaw();
   }
   
   @Override

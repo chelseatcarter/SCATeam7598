@@ -12,8 +12,6 @@ import frc.robot.Robot;
 
 public class RetractArms extends Command {
   public RetractArms() {
-    // Use requires() here to declare subsystem dependencies
-    // eg. requires(chassis);
     requires(Robot.m_hatchArms);
   }
 

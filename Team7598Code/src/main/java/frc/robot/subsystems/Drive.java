@@ -12,39 +12,30 @@ import frc.robot.RobotMap;
 import frc.robot.commands.TankDrive;
 import edu.wpi.first.wpilibj.Victor;
 import frc.robot.subsystems.Gamepad;
-import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.PWM;
 
-/**
- * Add your docs here.
- */
-public class Drive extends Subsystem {
-
-  public static Victor frontLeftMotor;
-  public static Victor frontRightMotor;
- // public static Victor backLeftMotor;
-  //public static Victor backRightMotor;
+public class Drive extends Subsystem 
+{
+  public static Victor leftMotors;
+  public static Victor rightMotors;
   public double maxDriveVal = 0.52;
 
   public static PWM climbMotor;
-  public double liftVal = 0.6;
+  public double liftVal = 0.4;
   
   public Drive()
   {
-    frontLeftMotor = new Victor(RobotMap.FRONT_LEFT_MOTOR);
-    frontRightMotor = new Victor(RobotMap.FRONT_RIGHT_MOTOR);
-   // backLeftMotor = new Victor(RobotMap.BACK_LEFT_MOTOR);
-    //backRightMotor = new Victor(RobotMap.BACK_RIGHT_MOTOR);
-
-    // climbMotor = new PWM(RobotMap.CLIMB_MOTOR);
+    leftMotors = new Victor(RobotMap.LEFT_MOTORS);
+    rightMotors = new Victor(RobotMap.RIGHT_MOTORS);
+    climbMotor = new PWM(RobotMap.CLIMB_MOTOR);
   }
-  @Override
-  public void initDefaultCommand() {
 
-    
-    // Set the default command for a subsystem here.
+  @Override
+  public void initDefaultCommand() 
+  {
     setDefaultCommand(new TankDrive());
   }
+
   public double driveRight(Gamepad driver)
   {
     double rightDriverVal = driver.getRawAxis(RobotMap.DRIVER_RIGHT_Y_AXIS);
@@ -59,22 +50,17 @@ public class Drive extends Subsystem {
 
   public void throttledTankDrive(Gamepad driver)
   {
-    frontLeftMotor.set(driveLeft(driver)*maxDriveVal);
-    frontRightMotor.set(driveRight(driver)*maxDriveVal);
-    //backLeftMotor.set(driveLeft(driver)*maxDriveVal);
-    //backRightMotor.set(driveRight(driver)*maxDriveVal);
+    leftMotors.set(driveLeft(driver)*maxDriveVal);
+    rightMotors.set(driveRight(driver)*maxDriveVal);
   }
 
-  public void climbUp(){
+  public void climbUp()
+  {
     climbMotor.setSpeed(liftVal);
   }
 
-  public void climbDown(){
-    climbMotor.setSpeed(-1*liftVal);
+  public void climbDown()
+  {
+    climbMotor.setSpeed(-1.0*liftVal);
   }
 }
-
-
-
-
-//65 degrees is what you should heat your house to

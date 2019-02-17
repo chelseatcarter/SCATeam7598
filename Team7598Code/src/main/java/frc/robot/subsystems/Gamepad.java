@@ -12,8 +12,8 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import frc.robot.RobotMap;
 
-public class Gamepad extends Joystick {
-
+public class Gamepad extends Joystick 
+{
     public Gamepad(int gamepadPort)
     {
         super(gamepadPort);
@@ -29,26 +29,32 @@ public class Gamepad extends Joystick {
         return new JoystickButton(this, RobotMap.DRIVER_B);
     }
 
-    //return object ButtonY
     public JoystickButton getOperatorButtonY()
     {
         return new JoystickButton(this, RobotMap.OPERATOR_Y);
     }
 
-    //return object ButtonY
     public JoystickButton getDriverButtonY()
     {
         return new JoystickButton(this, RobotMap.DRIVER_Y);
     }
 
-    //return object Left Trigger Button
-    public JoystickButton getLeftTriggerClick()
+    public JoystickButton getOperatorLeftTrigger()
+    {
+        return new JoystickButton(this, RobotMap.OPERATOR_LT);
+    }
+
+    public JoystickButton getDriverLeftTrigger()
     {
         return new JoystickButton(this, RobotMap.DRIVER_LT);
     }
 
-    //return object RIght Trigger Button
-    public JoystickButton getRightTriggerClick()
+    public JoystickButton getOperatorRightTrigger()
+    {
+        return new JoystickButton(this, RobotMap.OPERATOR_RT);
+    }
+
+    public JoystickButton getDriverRightTrigger()
     {
         return new JoystickButton(this, RobotMap.DRIVER_RT);
     }
@@ -58,14 +64,14 @@ public class Gamepad extends Joystick {
         return new JoystickButton(this, RobotMap.OPERATOR_LB);
     }
 
-    public JoystickButton getOperatorRB()
-    {
-        return new JoystickButton(this, RobotMap.OPERATOR_RB);
-    }
-
     public JoystickButton getDriverLB()
     {
         return new JoystickButton(this, RobotMap.DRIVER_LB);
+    }
+
+    public JoystickButton getOperatorRB()
+    {
+        return new JoystickButton(this, RobotMap.OPERATOR_RB);
     }
 
     public JoystickButton getDriverRB()

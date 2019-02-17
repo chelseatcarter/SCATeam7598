@@ -11,7 +11,6 @@ import frc.robot.Robot;
 
 public class DriveStraight extends Command {
   public DriveStraight() {
-    // Use requires() here to declare subsystem dependencies
     requires(Robot.m_drive);
   }
 

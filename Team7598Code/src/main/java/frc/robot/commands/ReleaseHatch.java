@@ -12,8 +12,6 @@ import frc.robot.Robot;
 
 public class ReleaseHatch extends Command {
   public ReleaseHatch() {
-    // Use requires() here to declare subsystem dependencies
-    // eg. requires(chassis);
     requires(Robot.m_claw);
   }
 
@@ -25,7 +23,7 @@ public class ReleaseHatch extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-  Robot.m_claw.openClaw();
+    Robot.m_claw.openClaw();
   }
 
   // Make this return true when this Command no longer needs to run execute()
