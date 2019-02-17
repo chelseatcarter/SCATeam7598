@@ -31,13 +31,13 @@ public class OI
 
     Button bButton = operatorStick.getOperatorButtonB();
     Button yButton = operatorStick.getOperatorButtonY();
-    Button lTrigger = driverStick.getOperatorLeftTrigger();
-    Button rTrigger = driverStick.getOperatorRightTrigger();
+    Button lBumper = operatorStick.getOperatorLB();
+    Button rBumper = operatorStick.getOperatorRB();
 
     bButton.whenPressed(new GrabHatch());
     yButton.whenPressed(new ReleaseHatch());
-    lTrigger.whileHeld(new ExtendArms());
-    rTrigger.whileHeld(new RetractArms());
+    lBumper.whenPressed(new ExtendArms());
+    rBumper.whenPressed(new RetractArms());
   }
 
   public Gamepad getDriverJoystick()
