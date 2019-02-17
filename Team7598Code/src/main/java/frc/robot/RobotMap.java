@@ -22,7 +22,7 @@ public class RobotMap
   //motors
   public static final int LEFT_MOTORS = 0;
   public static final int RIGHT_MOTORS = 1;
-  public static final int CLIMB_MOTOR = 2; 
+  public static final int CLIMB_MOTOR = 2;
 
   //controllers
   public static final int DRIVER = 0;
@@ -62,6 +62,7 @@ public class RobotMap
 	public static final int OPERATOR_START = 7;
   public static final int OPERATOR_BACK = 8;   
   
+  //solenoid channels
   public static final int FORWARD_CHANNEL_CLAW =  0;
   public static final int REVERSE_CHANNEL_CLAW = 1;
   public static final int FORWARD_CHANNEL_H1 = 2;
