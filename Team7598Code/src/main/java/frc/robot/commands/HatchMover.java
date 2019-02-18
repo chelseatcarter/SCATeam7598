@@ -12,11 +12,12 @@ import frc.robot.subsystems.Gamepad;
 import frc.robot.subsystems.HatchArms;
 //i feel like something should be here...
 
-
+//class
 public class HatchMover extends Command {
 
   private Gamepad operator;
 
+  //hatchmover code
   public HatchMover() {
     // Use requires() here to declare subsystem dependencies
     requires(Robot.m_hatchArms);

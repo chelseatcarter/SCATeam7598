@@ -62,22 +62,17 @@ public class HatchArms extends Subsystem
     // setDefaultCommand(new MySpecialCommand());
   }
 
-  public double moveHatchArmsLeft(Gamepad operator)
-  {
-    double leftDist = operator.getRawAxis(RobotMap.OPERATOR_LT);
-      return leftDist;
-  }
+  
+  public double moveHatchArms(Gamepad operator){
 
-  public double moveHatchArmsRight(Gamepad operator){
-
-    double rightDist = -1*operator.getRawAxis(RobotMap.OPERATOR_RT);
+    double rightDist = operator.getRawAxis(RobotMap.OPERATOR_RIGHT_X_AXIS);
     return rightDist;
 
 }
 
 public void moveHatch(Gamepad operator){
+
+  hatchMover.setSpeed(moveHatchArms(operator));
   
-  hatchMover.setSpeed(moveHatchArmsLeft(operator));
-  hatchMover.setSpeed(moveHatchArmsRight(operator));
 }
 }

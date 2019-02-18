@@ -11,8 +11,9 @@ import frc.robot.subsystems.Gamepad;
 import edu.wpi.first.wpilibj.buttons.Button;
 import frc.robot.commands.GrabHatch;
 import frc.robot.commands.ReleaseHatch;
-import frc.robot.commands.RetractArms;
+ import frc.robot.commands.RetractArms;
 import frc.robot.commands.ExtendArms;
+
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -33,11 +34,15 @@ public class OI
     Button yButton = operatorStick.getOperatorButtonY();
     Button lBumper = operatorStick.getOperatorLB();
     Button rBumper = operatorStick.getOperatorRB();
+    Button drBumper = driverStick.getDriverRB();
+    Button dlBumper = driverStick.getDriverLB();
 
     bButton.whenPressed(new GrabHatch());
     yButton.whenPressed(new ReleaseHatch());
     lBumper.whenPressed(new ExtendArms());
     rBumper.whenPressed(new RetractArms());
+    
+
   }
 
   public Gamepad getDriverJoystick()

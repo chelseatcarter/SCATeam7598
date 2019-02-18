@@ -21,7 +21,7 @@ public class Drive extends Subsystem
   public double maxDriveVal = 0.52;
 
   public static PWM climbMotor;
-  public double liftVal = 0.4;
+  public double liftVal = 0.6;
   
   public Drive()
   {
@@ -54,13 +54,17 @@ public class Drive extends Subsystem
     rightMotors.set(driveRight(driver)*maxDriveVal);
   }
 
-  public void climbUp()
+  public double climbFunction(Gamepad operator)
   {
-    climbMotor.setSpeed(liftVal);
+    double liftPower = operator.getRawAxis(RobotMap.OPERATOR_LEFT_X_AXIS);
+    return liftPower;
   }
 
-  public void climbDown()
-  {
-    climbMotor.setSpeed(-1.0*liftVal);
+  public void startClimb(Gamepad operator){
+    
+    climbMotor.setSpeed(climbFunction(operator)*liftVal);
   }
+
+
+  
 }
