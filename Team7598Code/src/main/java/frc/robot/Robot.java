@@ -13,6 +13,7 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import frc.robot.subsystems.Drive;
 import frc.robot.subsystems.Camera;
+import frc.robot.commands.HatchMechanism;
 import frc.robot.subsystems.Claw;
 import frc.robot.subsystems.HatchArms;
 /**
@@ -27,10 +28,10 @@ public class Robot extends TimedRobot
   public static Drive m_drive;
   public static OI m_oi;
   public static Camera m_camera;
-  public static Claw m_claw;
   public static HatchArms m_hatchArms;
+  public static Claw m_claw;
 
-  Command m_autonomousCommand;
+  Command m_hatchMechanism; //replaces the Claw and HatchArms objects
   SendableChooser<Command> m_chooser = new SendableChooser<>();
 
   /**
@@ -44,6 +45,7 @@ public class Robot extends TimedRobot
     m_hatchArms = new HatchArms();
     m_drive = new Drive();
     m_camera = new Camera();
+    m_hatchMechanism = new HatchMechanism();
     m_oi = new OI();
     //m_climbToLevel2 = new ClimbToLevelTwo();
   }
@@ -118,6 +120,7 @@ public class Robot extends TimedRobot
     // this line or comment it out.
     //if (m_autonomousCommand != null) {
     //  m_autonomousCommand.cancel();
+    m_hatchMechanism.start();
     
   }
 

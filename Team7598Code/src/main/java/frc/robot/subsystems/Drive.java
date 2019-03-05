@@ -64,7 +64,4 @@ public class Drive extends Subsystem
     
     climbMotor.setSpeed(climbFunction(operator)*liftVal);
   }
-
-
-  
 }
