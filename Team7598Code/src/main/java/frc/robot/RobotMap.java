@@ -18,5 +18,12 @@ package frc.robot;
  */
 public class RobotMap 
 {
+  //analog
   public static int ENCODER_CHANNEL = 1;
+  public static int JOHN_CHANNEL_A = 2;
+  public static int JOHN_CHANNEL_B = 3;
+
+  //digita;
+  public static int E4T_CHANNEL_A = 1;
+  public static int E4T_CHANNEL_B = 2;
 }

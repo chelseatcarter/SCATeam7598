@@ -67,7 +67,7 @@ public class AbsoluteEncoder extends Subsystem {
       if (delta > 3000 || delta < -3000) 
       {
         if (direction == 1 )
-          rotationCount +=  1;
+          rotationCount += 1;
         if (direction == 2)
           rotationCount -= 1;
       }
