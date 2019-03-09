@@ -16,6 +16,8 @@ import frc.robot.subsystems.Camera;
 import frc.robot.commands.HatchMechanism;
 import frc.robot.subsystems.Claw;
 import frc.robot.subsystems.HatchArms;
+import frc.robot.subsystems.BackJack;
+
 /**
  * The VM is configured to automatically run this class, and to call the
  * functions corresponding to each mode, as described in the TimedRobot
@@ -30,6 +32,7 @@ public class Robot extends TimedRobot
   public static Camera m_camera;
   public static HatchArms m_hatchArms;
   public static Claw m_claw;
+  public static BackJack m_jack;
 
   Command m_hatchMechanism; //replaces the Claw and HatchArms objects
   SendableChooser<Command> m_chooser = new SendableChooser<>();
@@ -42,10 +45,11 @@ public class Robot extends TimedRobot
   public void robotInit() {
     //subsystems that need to be called
     m_claw = new Claw();
-    m_hatchArms = new HatchArms();
     m_drive = new Drive();
     m_camera = new Camera();
     m_hatchMechanism = new HatchMechanism();
+    m_jack = new BackJack();
+    m_hatchArms = new HatchArms();
     m_oi = new OI();
     //m_climbToLevel2 = new ClimbToLevelTwo();
   }

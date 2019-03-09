@@ -12,7 +12,9 @@ import edu.wpi.first.wpilibj.buttons.Button;
 import frc.robot.commands.GrabHatch;
 import frc.robot.commands.ReleaseHatch;
  import frc.robot.commands.RetractArms;
+import frc.robot.commands.RetractJack;
 import frc.robot.commands.ExtendArms;
+import frc.robot.commands.ExtendJack;
 
 
 /**
@@ -34,6 +36,9 @@ public class OI
     Button yButton = operatorStick.getOperatorButtonY();
     Button lBumper = operatorStick.getOperatorLB();
     Button rBumper = operatorStick.getOperatorRB();
+    Button xButton = operatorStick.getOperatorX();
+    Button aButton = operatorStick.getOperatorA();
+
     // Button drBumper = driverStick.getDriverRB();
     // Button dlBumper = driverStick.getDriverLB();
 
@@ -41,12 +46,16 @@ public class OI
     yButton.whenPressed(new ReleaseHatch());
     lBumper.whenPressed(new ExtendArms());
     rBumper.whenPressed(new RetractArms());
+    xButton.whenPressed(new ExtendJack());
+    aButton.whenPressed(new RetractJack());
+    
+
   }
 
   public Gamepad getDriverJoystick()
   {
     return driverStick;
-  }
+  } 
 
   public Gamepad getOperatorJoystick()
   {

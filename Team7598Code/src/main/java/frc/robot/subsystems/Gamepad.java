@@ -78,4 +78,14 @@ public class Gamepad extends Joystick
     {
         return new JoystickButton(this, RobotMap.DRIVER_RB);
     }
+
+    public JoystickButton getOperatorX()
+    {
+        return new JoystickButton(this, RobotMap.OPERATOR_X); 
+    }
+
+    public JoystickButton getOperatorA()
+    {
+        return new JoystickButton(this, RobotMap.OPERATOR_A);
+    }
 }

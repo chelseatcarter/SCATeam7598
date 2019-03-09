@@ -69,4 +69,8 @@ public class RobotMap
   
   public static final int FORWARD_CHANNEL_H2 = 4;
   public static final int REVERSE_CHANNEL_H2 = 5;
+
+  public static final int FORWARD_CHANNEL_JACK = 6;// ask Tyler
+  public static final int REVERSE_CHANNEL_JACK = 7; // ask Tyler
+
 }
